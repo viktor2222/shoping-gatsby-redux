@@ -9,10 +9,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import { GlobalStyle } from './global'
-import Header from './Header/header'
+import { Global } from '../../../styles'
+import { Header } from '../Header/header'
 
-const Layout = ({ children }) => {
+export const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -25,9 +25,8 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <GlobalStyle />
+      <Global />
       <Header siteTitle={data.site.siteMetadata.title} />
-
       <main style={{ paddingTop: '70px' }}>{children}</main>
       <footer>
           ©
@@ -44,5 +43,3 @@ const Layout = ({ children }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
-
-export default Layout

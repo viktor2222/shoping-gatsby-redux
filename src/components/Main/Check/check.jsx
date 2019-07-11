@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { Fade } from 'react-reveal'
 
-import { BuyBtn, ItemList, CartImg } from '../global'
+import { BuyBtn, ItemList, CartImg } from '../styled'
 
 import {
   Overlay, CheckContainer, TitleCheck,
 } from './styled'
 
-const Check = () => {
+export const Check = () => {
   const [openCheck, setOpenCheck] = useState(false);
 
   return (
@@ -62,5 +62,3 @@ const Check = () => {
     </>
   )
 }
-
-export default Check
