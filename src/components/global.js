@@ -1,4 +1,7 @@
-html {
+import styled, { createGlobalStyle } from 'styled-components'
+
+export const GlobalStyle = createGlobalStyle`
+  html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -185,12 +188,13 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em georgia, serif;
+  font: 18px/24px 'Sniglet', cursive, sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
 * {
   box-sizing: inherit;
+  
 }
 *:before {
   box-sizing: inherit;
@@ -203,6 +207,7 @@ body {
   font-family: georgia, serif;
   font-weight: normal;
   word-wrap: break-word;
+  overflow: hidden;
   font-kerning: normal;
   -moz-font-feature-settings: "kern", "liga", "clig", "calt";
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
@@ -228,7 +233,6 @@ h1 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
   color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -245,7 +249,6 @@ h2 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
   color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -262,7 +265,6 @@ h3 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
   color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -279,7 +281,6 @@ h4 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
   color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -296,7 +297,6 @@ h5 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
   color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -313,7 +313,6 @@ h6 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
   color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -621,3 +620,39 @@ pre tt:after {
     font-size: 100%;
   }
 }
+`
+export const Container = styled.div`
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 10px;
+`;
+export const ItemList = styled.li`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`;
+export const BuyBtn = styled.button`
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    background: #999;
+    display: flex;
+    margin: 20px auto 0;
+    justify-content: center;
+    border: 1px solid #333;
+    cursor: pointer;
+    width: 100px;
+    color: #fff;
+    transition: all .3s;
+    padding: 5px;
+    font-weight: 800;
+    :hover{
+        transition: all .3s;
+        transform: scale(1.1);
+        background: #4ab94e;
+    }
+`;
+export const CartImg = styled.img`
+    height: 60px;
+    width: 70px;
+`;
