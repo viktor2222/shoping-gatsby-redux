@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react'
 // import { Fade } from 'react-reveal'
-import { Check } from '../../Main'
+// import { Check } from '../../Main'
 
 import {
   Container,
@@ -79,9 +79,9 @@ export const Header = () => {
           //)
         } */}
       </Container>
-      {openCheck && (
+      {/* {openCheck && (
         <Check />
-      ) }
+      ) } */}
     </HeaderContainer>
   )
 }
