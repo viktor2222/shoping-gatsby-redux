@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Fade } from 'react-reveal'
 
-import { BuyBtn, ItemList, CartImg } from '../styled'
+import { ItemList, CartImg } from '../styled'
+import { BuyBtn } from '../../../styles'
 
 import {
   Overlay, CheckContainer, TitleCheck,

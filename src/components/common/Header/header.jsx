@@ -25,7 +25,7 @@ export const Header = () => {
     <HeaderContainer>
       <Container>
         <ActiveList onClick={() => setOpen(!open)}>
-          <ImgCart src='./cart-icon.png' alt='cart' />
+          <ImgCart src='/cart.svg' alt='cart' />
           <CartCount>2</CartCount>
         </ActiveList>
         {/* {open
