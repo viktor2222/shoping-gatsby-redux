@@ -23,7 +23,15 @@ export const CheckContainer = styled.div`
         outline: 1px solid slategrey;
     }
 `;
-
+export const ItemList = styled.li`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`;
+export const CartImg = styled.img`
+    height: 60px;
+    width: 70px;
+`;
 export const Overlay = styled.div`
     background-color: rgba(43, 190, 226, .2);
     position: fixed;
@@ -31,7 +39,6 @@ export const Overlay = styled.div`
     height: 200%;
     border-radius: 4px;
 `;
-
 export const TitleCheck = styled.h4`
     text-align: center;
 `;

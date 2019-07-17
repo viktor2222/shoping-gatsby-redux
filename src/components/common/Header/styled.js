@@ -17,28 +17,6 @@ export const ImgCart = styled.img`
     height: 30px;
 `;
 
-export const CartList = styled.ul`
-    position: absolute;
-    border-left: 2px solid #333;
-    padding: 25px 15px;
-    height: calc(100vh - 70px);
-    min-width: 300px;
-    right: 0;
-    top: 0;
-    margin-top: 70px;
-    overflow-y: scroll;
-    ::-webkit-scrollbar {
-        width: 5px;
-    }
-    ::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    }
-    ::-webkit-scrollbar-thumb {
-        background-color: #2bbee2;
-        outline: 1px solid slategrey;
-    }
-`;
-
 export const ActiveList = styled.div`
     position: relative;
     cursor: pointer;
@@ -59,13 +37,6 @@ export const CartCount = styled.span`
     top: -5px;
     right: -20px;
     color: #fff;
-`;
-
-export const SumCount = styled.div`
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
-    font-weight: 800;
 `;
 export const Title = styled.h4`
     font: 16px/22px 'Sniglet', sans-serif;
