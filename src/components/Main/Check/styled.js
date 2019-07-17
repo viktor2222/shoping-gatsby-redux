@@ -35,24 +35,3 @@ export const Overlay = styled.div`
 export const TitleCheck = styled.h4`
     text-align: center;
 `;
-export const BuyBtn = styled.button`
-    border-radius: 3px;
-    outline: none;
-    border: none;
-    background: #999;
-    display: flex;
-    margin: 20px auto 0;
-    justify-content: center;
-    border: 1px solid #333;
-    cursor: pointer;
-    width: 100px;
-    color: #fff;
-    transition: all .3s;
-    padding: 5px;
-    font-weight: 800;
-    :hover{
-        transition: all .3s;
-        transform: scale(1.1);
-        background: #4ab94e;
-    }
-`;

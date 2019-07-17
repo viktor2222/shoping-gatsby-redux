@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react'
 // import { Fade } from 'react-reveal'
-import { Check } from '../../Main'
+// import { Check } from '../../Main'
 
 import {
   Container,
@@ -25,7 +25,7 @@ export const Header = () => {
     <HeaderContainer>
       <Container>
         <ActiveList onClick={() => setOpen(!open)}>
-          <ImgCart src='./cart-icon.png' alt='cart' />
+          <ImgCart src='/cart.svg' alt='cart' />
           <CartCount>2</CartCount>
         </ActiveList>
         {/* {open
@@ -79,9 +79,9 @@ export const Header = () => {
           //)
         } */}
       </Container>
-      {openCheck && (
+      {/* {openCheck && (
         <Check />
-      ) }
+      ) } */}
     </HeaderContainer>
   )
 }

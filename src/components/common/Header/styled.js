@@ -10,6 +10,7 @@ export const HeaderContainer = styled.div`
     width: 100%;
     height: 70px;
     font: 18px/24px 'Sniglet', sans-serif;
+    z-index: 2;
 `;
 
 export const ImgCart = styled.img`
@@ -30,7 +31,7 @@ export const CartList = styled.ul`
         width: 5px;
     }
     ::-webkit-scrollbar-track {
-        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     }
     ::-webkit-scrollbar-thumb {
         background-color: #2bbee2;
@@ -56,7 +57,7 @@ export const CartCount = styled.span`
     align-items: center;
     justify-content: center;
     top: -5px;
-    right: -17px;
+    right: -20px;
     color: #fff;
 `;
 
