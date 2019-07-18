@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { Fade } from 'react-reveal'
 
-import { ItemList, CartImg } from '../styled'
-import { BuyBtn } from '../../../styles'
-
 import {
+  ItemList, CartImg,
   Overlay, CheckContainer, TitleCheck,
 } from './styled'
+
+import { BuyBtn } from '../../../styles'
+
 
 export const Check = () => {
   const [openCheck, setOpenCheck] = useState(false);
