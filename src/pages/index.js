@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-// import { Provider } from 'mobx-react'
 import { Layout } from '../components/common/Layout/layout'
 import { SEO } from '../components/common/Seo/seo'
 import { ProductList } from '../components/Main'
