@@ -1,18 +1,18 @@
 import React from 'react'
 
-import { observer } from 'mobx-react'
+import { observer, inject } from 'mobx-react'
 import {
   CartContainer, ProductImg, ShowContent, ContainerList,
 } from './styled'
 import { Container, BuyBtn } from '../../../styles'
 
-export const ProductList = observer(({ store }) => (
+const _ProductList = observer(({ cartStore }) => (
   <Container>
     <ContainerList>
       <CartContainer>
         <ProductImg src='/cart/activiafin.png' alt='activiafin' />
         <ShowContent>
-          <h4>{store.text}</h4>
+          <h4>{cartStore.text}</h4>
           <p>Description</p>
           <p>Price</p>
           <BuyBtn type='button' cart>Add To Cart</BuyBtn>
@@ -84,3 +84,4 @@ export const ProductList = observer(({ store }) => (
     </ContainerList>
   </Container>
 ))
+export const ProductList = inject('cartStore')(_ProductList)
