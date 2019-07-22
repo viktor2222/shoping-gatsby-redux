@@ -15,7 +15,7 @@ import {
 export const Header = inject('cartStore')(observer(({ cartStore }) => (
   <HeaderContainer>
     <Container>
-      <ActiveList onClick={() => cartStore.isShow}>
+      <ActiveList onClick={() => cartStore.toggleCart()}>
         <ImgCart src='/cart.svg' alt='cart' />
         <CartCount>2</CartCount>
       </ActiveList>

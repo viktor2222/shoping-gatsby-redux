@@ -1,33 +1,25 @@
-/* eslint-disable no-return-assign */
 import {
-  observable, computed, action, decorate,
+  observable, computed, action,
 } from 'mobx'
 
 class CartStore {
-  text = 'textasassasassas'
+  @observable text = 'textasassasassas'
 
-  show = false
+  @observable show = false
 
-  get isCartShow() {
+  @computed get showCart() {
     return this.show
   }
 
-  ('Cart is hide')
-  isHide() {
-    return this.show = false
+  @action('Cart is hide')
+  hideCart() {
+    this.show = false
   }
 
-  ('Toggle Cart')
-  toggleCart() {
+  @action toggleCart() {
     return !this.show
   }
 }
-decorate(CartStore, {
-  text: observable,
-  show: observable,
-  isShow: computed,
-  isHide: action,
-  toggleCart: action,
-})
+
 
 export default CartStore
