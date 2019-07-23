@@ -12,7 +12,6 @@ const checkCustom = {
     top: '50%',
     left: '50%',
     bottom: 'auto',
-    maxHeight: '100vh',
     minHeight: 'max-content',
     borderRadius: 'none',
     maxWidth: '300px',
@@ -24,6 +23,7 @@ const checkCustom = {
 
 export const Check = () => (
   <CustomModal
+    isOpen
     cartModal={checkCustom}
   >
     <Fade top cascade>
