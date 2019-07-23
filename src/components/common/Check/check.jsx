@@ -23,7 +23,6 @@ const checkCustom = {
 
 export const Check = () => (
   <CustomModal
-    isOpen
     cartModal={checkCustom}
   >
     <Fade top cascade>
