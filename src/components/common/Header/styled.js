@@ -6,11 +6,9 @@ export const HeaderContainer = styled.div`
     justify-content: center;
     align-items: center;
     padding: 0px 10px;
-    position: fixed;
     width: 100%;
     height: 70px;
     font: 18px/24px 'Sniglet', sans-serif;
-    z-index: 2;
 `;
 
 export const ImgCart = styled.img`

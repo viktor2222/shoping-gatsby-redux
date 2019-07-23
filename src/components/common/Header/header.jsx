@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { observer, inject } from 'mobx-react'
-import { Cart } from '..'
 import {
   Container,
 } from '../../../styles'
@@ -12,6 +11,8 @@ import {
   CartCount,
 } from './styled'
 
+import { Cart } from '..'
+
 export const Header = inject('cartStore')(observer(({ cartStore }) => (
   <HeaderContainer>
     <Container>
@@ -19,7 +20,7 @@ export const Header = inject('cartStore')(observer(({ cartStore }) => (
         <ImgCart src='/cart.svg' alt='cart' />
         <CartCount>2</CartCount>
       </ActiveList>
-      <Cart />
     </Container>
+    <Cart />
   </HeaderContainer>
 )))

@@ -1,32 +1,34 @@
 import styled from 'styled-components'
 
-export const CartList = styled.ul`
-    position: absolute;
-    border-left: 2px solid #333;
-    padding: 25px 15px;
-    height: calc(100vh - 70px);
-    min-width: 300px;
-    right: 0;
-    top: 0;
-    margin-top: 70px;
-    overflow-y: scroll;
-    ::-webkit-scrollbar {
-        width: 5px;
-    }
-    ::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    }
-    ::-webkit-scrollbar-thumb {
-        background-color: #2bbee2;
-        outline: 1px solid slategrey;
-    }
-`;
-export const TitleCheck = styled.h4`
-    text-align: center;
-`;
 export const SumCount = styled.div`
     display: flex;
     justify-content: flex-end;
     margin-top: 20px;
     font-weight: 800;
+`;
+export const CloseButton = styled.div`
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    opacity: 0.3;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    :hover {
+        opacity: 1;
+    }
+    :before, :after {
+        position: absolute;
+        left: 15px;
+        content: ' ';
+        height: 15px;
+        width: 2px;
+        background-color: #333;
+    }
+    :before {
+        transform: rotate(45deg);
+    }
+    :after {
+        transform: rotate(-45deg);
+    }
 `;
