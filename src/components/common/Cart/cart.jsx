@@ -8,14 +8,11 @@ import {
 } from './styled'
 
 export const Cart = inject('cartStore')(observer(({ cartStore }) => (
-  <>
-    {console.log(cartStore.toggleCart())}
-    <CustomModal isOpen={cartStore.toggleCart()}>
-      <CartList>
-        <CartProductItem />
-        <SumCount>Total: $40</SumCount>
-        <BuyBtn onClick={() => cartStore.hideCart()} type='button'>Buy</BuyBtn>
-      </CartList>
-    </CustomModal>
-  </>
+  <CustomModal isOpen={cartStore.show}>
+    <CartList>
+      <CartProductItem />
+      <SumCount>Total: $40</SumCount>
+      <BuyBtn onClick={() => cartStore.hideCart()} type='button'>Buy</BuyBtn>
+    </CartList>
+  </CustomModal>
 )))

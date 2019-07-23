@@ -1,5 +1,5 @@
 import {
-  observable, computed, action,
+  observable, action,
 } from 'mobx'
 
 class CartStore {
@@ -7,7 +7,7 @@ class CartStore {
 
   @observable show = false
 
-  @computed get showCart() {
+  @action showCart() {
     return this.show
   }
 
@@ -16,8 +16,9 @@ class CartStore {
     this.show = false
   }
 
-  @action toggleCart() {
-    return !this.show
+  @action('Toggle Cart')
+  toggleCart() {
+    this.show = !this.show
   }
 }
 

@@ -22,5 +22,3 @@ const IndexPage = () => (
 )
 
 export default IndexPage
-
-stores.cartStore.text = 'asasassdasfasa'
