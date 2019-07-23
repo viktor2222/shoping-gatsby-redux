@@ -1,5 +1,6 @@
 import React from 'react'
 import { Fade } from 'react-reveal'
+import { inject, observer } from 'mobx-react'
 import { CustomModal } from '..'
 import {
   ItemList, CartImg, TitleCheck,
@@ -21,8 +22,9 @@ const checkCustom = {
   },
 }
 
-export const Check = () => (
+export const Check = inject('cartStore')(observer(({ cartStore }) => (
   <CustomModal
+    isOpen={cartStore.isShowCheck}
     cartModal={checkCustom}
   >
     <Fade top cascade>
@@ -32,8 +34,7 @@ export const Check = () => (
         <span>activia</span>
         <span>$25</span>
       </ItemList>
-      <BuyBtn type='button'>Ok!</BuyBtn>
+      <BuyBtn type='button' onClick={() => cartStore.hideCheck()}>Ok!</BuyBtn>
     </Fade>
   </CustomModal>
-
-)
+)))

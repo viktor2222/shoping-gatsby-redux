@@ -3,16 +3,28 @@ import {
 } from 'mobx'
 
 class CartStore {
-  @observable show = false
+  @observable isShowCart = false
+
+  @observable isShowCheck = false
 
   @action('Cart is show')
   showCart() {
-    this.show = true
+    this.isShowCart = true
   }
 
   @action('Cart is hide')
   hideCart() {
-    this.show = false
+    this.isShowCart = false
+  }
+
+  @action('Check is show')
+  showCheck() {
+    this.isShowCheck = true
+  }
+
+  @action('Check is hide')
+  hideCheck() {
+    this.isShowCheck = false
   }
 }
 

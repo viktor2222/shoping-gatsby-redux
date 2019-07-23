@@ -26,14 +26,14 @@ const customStyles = {
 export const Cart = inject('cartStore')(observer(({ cartStore }) => (
 
   <CustomModal
-    isOpen={cartStore.show}
+    isOpen={cartStore.isShowCart}
     cartModal={customStyles}
   >
     <Fade right cascade>
       <CloseButton onClick={() => cartStore.hideCart()} />
       <CartProductItem />
       <SumCount>Total: $40</SumCount>
-      <BuyBtn onClick={() => cartStore.hideCart()} type='button'>Buy</BuyBtn>
+      <BuyBtn onClick={() => cartStore.showCheck() || cartStore.hideCart()} type='button'>Buy</BuyBtn>
     </Fade>
   </CustomModal>
 
