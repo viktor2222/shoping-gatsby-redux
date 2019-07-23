@@ -12,9 +12,11 @@ export const CartContainer = styled.div`
 `;
 
 export const ProductImg = styled.img`
+    height: 140px;
     width: 200px;
     transition: all .3s;
     margin-top: 10px;
+    object-fit: cover;
     ${CartContainer}:hover & {
         margin-top: -10px;
         transform: scale(.7);

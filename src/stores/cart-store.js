@@ -3,8 +3,6 @@ import {
 } from 'mobx'
 
 class CartStore {
-  @observable text = 'textasassasassas'
-
   @observable show = false
 
   @action showCart() {
@@ -21,6 +19,5 @@ class CartStore {
     this.show = !this.show
   }
 }
-
 
 export default CartStore
