@@ -11,7 +11,8 @@ import {
   CartCount,
 } from './styled'
 
-import { Cart } from '..'
+import { Check, Cart } from '..'
+
 
 export const Header = inject('cartStore')(observer(({ cartStore }) => (
   <HeaderContainer>
@@ -22,5 +23,6 @@ export const Header = inject('cartStore')(observer(({ cartStore }) => (
       </ActiveList>
     </Container>
     <Cart />
+    <Check />
   </HeaderContainer>
 )))

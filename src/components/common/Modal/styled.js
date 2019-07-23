@@ -1,22 +1,15 @@
 import styled from 'styled-components'
 
-export const SumCount = styled.div`
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
-    font-weight: 800;
-`;
-
 export const CloseButton = styled.div`
     cursor: pointer;
     width: 20px;
     height: 20px;
-    color: #333;
+    opacity: 0.3;
     position: absolute;
     right: 20px;
     top: 10px;
-    :hover{
-        color: #ff0000;
+    :hover {
+        opacity: 1;
     }
     :before, :after {
         position: absolute;
