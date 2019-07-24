@@ -12,7 +12,7 @@ const _ProductList = observer(({ cartStore }) => (
       <CartContainer>
         <ProductImg src='/cart/activiafin.png' alt='activiafin' />
         <ShowContent>
-          <h4>{cartStore.text}</h4>
+          <h4>text</h4>
           <p>Description</p>
           <p>Price</p>
           <BuyBtn type='button' cart>Add To Cart</BuyBtn>
