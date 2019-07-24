@@ -3,8 +3,6 @@ import {
 } from 'mobx'
 
 class CartStore {
-  @observable text = 'textasassasassas'
-
   @observable show = false
 
   @action showCart() {
