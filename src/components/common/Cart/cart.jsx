@@ -33,7 +33,7 @@ export const Cart = inject('cartStore')(observer(({ cartStore }) => (
       <CloseButton onClick={() => cartStore.hideCart()} />
       <CartProductItem />
       <SumCount>Total: $40</SumCount>
-      <BuyBtn onClick={() => cartStore.showCheck() || cartStore.hideCart()} type='button'>Buy</BuyBtn>
+      <BuyBtn onClick={() => ((cartStore.showCheck(), cartStore.hideCart()))} type='button'>Buy</BuyBtn>
     </Fade>
   </CustomModal>
 
