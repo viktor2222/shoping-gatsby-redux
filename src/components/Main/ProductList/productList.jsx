@@ -1,86 +1,25 @@
 import React from 'react'
 
-import { observer } from 'mobx-react'
-import {
-  CartContainer, ProductImg, ShowContent, ContainerList,
-} from './styled'
-import { Container, BuyBtn } from '../../../styles'
+import { ProductItem } from '../ProductItem/productItem'
 
-export const ProductList = observer(({ store }) => (
+import { ContainerList } from './styled'
+import { Container } from '../../../styles'
+import { ProductData } from '../../../stores/features'
+
+export const ProductList = () => (
   <Container>
     <ContainerList>
-      <CartContainer>
-        <ProductImg src='/cart/activiafin.png' alt='activiafin' />
-        <ShowContent>
-          <h4>{store.text}</h4>
-          <p>Description</p>
-          <p>Price</p>
-          <BuyBtn type='button' cart>Add To Cart</BuyBtn>
-        </ShowContent>
-      </CartContainer>
-      <CartContainer>
-        <ProductImg src='/cart/activiafin.png' alt='activiafin' />
-        <ShowContent>
-          <h4>Title</h4>
-          <p>Description</p>
-          <p>Price</p>
-          <BuyBtn type='button' cart>Add To Cart</BuyBtn>
-        </ShowContent>
-      </CartContainer>
-      <CartContainer>
-        <ProductImg src='/cart/activiafin.png' alt='activiafin' />
-        <ShowContent>
-          <h4>Title</h4>
-          <p>Description</p>
-          <p>Price</p>
-          <BuyBtn type='button' cart>Add To Cart</BuyBtn>
-        </ShowContent>
-      </CartContainer>
-      <CartContainer>
-        <ProductImg src='/cart/activiafin.png' alt='activiafin' />
-        <ShowContent>
-          <h4>Title</h4>
-          <p>Description</p>
-          <p>Price</p>
-          <BuyBtn type='button' cart>Add To Cart</BuyBtn>
-        </ShowContent>
-      </CartContainer>
-      <CartContainer>
-        <ProductImg src='/cart/activiafin.png' alt='activiafin' />
-        <ShowContent>
-          <h4>Title</h4>
-          <p>Description</p>
-          <p>Price</p>
-          <BuyBtn type='button' cart>Add To Cart</BuyBtn>
-        </ShowContent>
-      </CartContainer>
-      <CartContainer>
-        <ProductImg src='/cart/activiafin.png' alt='activiafin' />
-        <ShowContent>
-          <h4>Title</h4>
-          <p>Description</p>
-          <p>Price</p>
-          <BuyBtn type='button' cart>Add To Cart</BuyBtn>
-        </ShowContent>
-      </CartContainer>
-      <CartContainer>
-        <ProductImg src='/cart/activiafin.png' alt='activiafin' />
-        <ShowContent>
-          <h4>Title</h4>
-          <p>Description</p>
-          <p>Price</p>
-          <BuyBtn type='button' cart>Add To Cart</BuyBtn>
-        </ShowContent>
-      </CartContainer>
-      <CartContainer>
-        <ProductImg src='/cart/activiafin.png' alt='activiafin' />
-        <ShowContent>
-          <h4>Title</h4>
-          <p>Description</p>
-          <p>Price</p>
-          <BuyBtn type='button' cart>Add To Cart</BuyBtn>
-        </ShowContent>
-      </CartContainer>
+      {ProductData.map(({
+        id, title, description, img, price,
+      }) => (
+        <ProductItem
+          key={id}
+          title={title}
+          description={description}
+          img={img}
+          price={price}
+        />
+      ))}
     </ContainerList>
   </Container>
-))
+)

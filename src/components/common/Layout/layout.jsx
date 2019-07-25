@@ -20,7 +20,7 @@ export const Layout = ({ children }) => {
     <>
       <Global />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main style={{ paddingTop: '70px' }}>{children}</main>
+      <main>{children}</main>
       <footer>
           ©
         {' '}
