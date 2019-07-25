@@ -8,9 +8,9 @@ import {
 export const CartProductItem = inject('cartStore')(observer(({ cartStore }) => (
   <>
     <ItemList>
-      <CartImg src='./cart/activiafin.png' alt='product item' />
-      <span>{cartStore.text}</span>
-      <span>$5</span>
+      <CartImg src={cartStore.img} alt={cartStore.title} />
+      <span>{cartStore.title}</span>
+      <span>{cartStore.price}</span>
     </ItemList>
   </>
 )))

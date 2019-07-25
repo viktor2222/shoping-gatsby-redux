@@ -7,6 +7,8 @@ class CartStore {
 
   @observable isShowCheck = false
 
+  @observable todoCart = []
+
   @action('Cart is show')
   showCart() {
     this.isShowCart = true
@@ -25,6 +27,16 @@ class CartStore {
   @action('Check is hide')
   hideCheck() {
     this.isShowCheck = false
+  }
+
+  @action('Add todo Cart')
+  addTodoCart(payload) {
+    this.todoCart.push({ payload })
+  }
+
+  @action('Remove todo Cart')
+  removeTodoCart(id) {
+    this.todoCart = this.todoCart.filter(item => item.id !== id)
   }
 }
 
