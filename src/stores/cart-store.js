@@ -7,7 +7,7 @@ class CartStore {
 
   @observable isShowCheck = false
 
-  @observable todoCart = []
+  @observable productCart = []
 
   @action('Cart is show')
   showCart() {
@@ -31,12 +31,12 @@ class CartStore {
 
   @action('Add todo Cart')
   addTodoCart(payload) {
-    this.todoCart.push({ payload })
+    this.productCart.push(payload)
   }
 
   @action('Remove todo Cart')
   removeTodoCart(id) {
-    this.todoCart = this.todoCart.filter(item => item.id !== id)
+    this.productCart = this.productCart.filter(item => item.id !== id)
   }
 }
 

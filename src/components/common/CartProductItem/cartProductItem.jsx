@@ -7,10 +7,15 @@ import {
 
 export const CartProductItem = inject('cartStore')(observer(({ cartStore }) => (
   <>
-    <ItemList>
-      <CartImg src={cartStore.img} alt={cartStore.title} />
-      <span>{cartStore.title}</span>
-      <span>{cartStore.price}</span>
-    </ItemList>
+    {cartStore.productCart.map(({
+      img, title, price, id,
+    }) => (
+      <ItemList key={id}>
+        <CartImg src={img} alt={title} />
+        <span>{title}</span>
+        <span>{price}</span>
+      </ItemList>
+    ))}
+
   </>
 )))

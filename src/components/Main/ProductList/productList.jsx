@@ -9,15 +9,10 @@ import { ProductData } from '../../../stores/features'
 export const ProductList = () => (
   <Container>
     <ContainerList>
-      {ProductData.map(({
-        id, title, description, img, price,
-      }) => (
+      {ProductData.map(item => (
         <ProductItem
-          key={id}
-          title={title}
-          description={description}
-          img={img}
-          price={price}
+          key={item.id}
+          item={item}
         />
       ))}
     </ContainerList>
