@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import { Provider } from 'mobx-react'
 
@@ -16,7 +15,6 @@ const IndexPage = () => (
     <Layout>
       <SEO title='Home' />
       <ProductList />
-      <Link to='/page-2/'>Go to page 2</Link>
     </Layout>
   </Provider>
 )

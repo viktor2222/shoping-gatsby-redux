@@ -7,10 +7,10 @@ import { BuyBtn } from '../../../styles'
 
 export const ProductItem = inject('cartStore')(({ cartStore, item }) => {
   const {
-    title, img, description, price,
+    title, img, description, price, id,
   } = item
   return (
-    <CartContainer>
+    <CartContainer key={id}>
       <ProductImg src={img} alt={title} />
       <ShowContent>
         <h4>{title}</h4>
