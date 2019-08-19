@@ -31,11 +31,10 @@ class CartStore {
 
   @action('Add todo Cart')
   addTodoCart(payload) {
-    // if (this.productCart.find(this.productCart.id !== payload.id)) {
-    //   this.productCart.push(payload)
-    // }
+    if (this.productCart.find(x => x.id === payload.id)) {
+      return
+    }
     this.productCart.push(payload)
-    console.log(this.productCart.find(this.productCart.id))
   }
 
   @action('Remove todo Cart')
