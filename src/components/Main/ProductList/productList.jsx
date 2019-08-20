@@ -13,7 +13,7 @@ export const ProductList = inject('cartStore')(observer(({ cartStore }) => (
         <ProductItem
           key={item.id}
           {...item}
-          addToCart={x => cartStore.addTodoCart(x)}
+          addToCart={() => cartStore.addTodoCart(item)}
         />
       ))}
     </ContainerList>
