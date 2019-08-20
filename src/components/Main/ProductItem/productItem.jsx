@@ -5,9 +5,9 @@ import {
 import { BuyBtn } from '../../../styles'
 
 export const ProductItem = ({
-  addToCart, title, img, id, description, price,
+  addToCart, onMouseEnter, onMouseLeave, title, img, id, description, price,
 }) => (
-  <CartContainer key={id}>
+  <CartContainer key={id} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
     <ProductImg src={img} alt={title} />
     <ShowContent>
       <h4>{title}</h4>

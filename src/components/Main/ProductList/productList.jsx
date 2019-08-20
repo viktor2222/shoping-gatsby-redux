@@ -14,6 +14,8 @@ export const ProductList = inject('cartStore')(observer(({ cartStore }) => (
           key={item.id}
           {...item}
           addToCart={() => cartStore.addTodoCart(item)}
+          onMouseEnter={() => cartStore.cartMouseEnter()}
+          onMouseLeave={() => cartStore.cartMouseLeave()}
         />
       ))}
     </ContainerList>
