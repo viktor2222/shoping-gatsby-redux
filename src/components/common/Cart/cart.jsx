@@ -31,7 +31,13 @@ export const Cart = inject('cartStore')(observer(({ cartStore }) => (
   >
     <Fade right cascade>
       <CloseButton onClick={() => cartStore.hideCart()} />
-      <CartProductItem />
+      {cartStore.productCart.map(i => (
+        <CartProductItem
+          key={i.id}
+          {...i}
+          removeWithCart={() => cartStore.removeTodoCart(i.id)}
+        />
+      ))}
       <SumCount>Total: $40</SumCount>
       <BuyBtn onClick={() => ((cartStore.showCheck(), cartStore.hideCart()))} type='button'>Buy</BuyBtn>
     </Fade>

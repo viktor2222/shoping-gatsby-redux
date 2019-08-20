@@ -1,16 +1,16 @@
 import React from 'react'
-import { inject, observer } from 'mobx-react'
 
 import {
-  CartImg, ItemList,
+  CartImg, ItemList, CloseBtn,
 } from './styled'
 
-export const CartProductItem = inject('cartStore')(observer(({ cartStore }) => (
-  <>
-    <ItemList>
-      <CartImg src='./cart/activiafin.png' alt='product item' />
-      <span>{cartStore.text}</span>
-      <span>$5</span>
-    </ItemList>
-  </>
-)))
+export const CartProductItem = ({
+  img, title, price, id, removeWithCart,
+}) => (
+  <ItemList key={id}>
+    <CartImg src={img} alt={title} />
+    <span>{title}</span>
+    <span>{price}</span>
+    <CloseBtn onClick={removeWithCart}>x</CloseBtn>
+  </ItemList>
+)

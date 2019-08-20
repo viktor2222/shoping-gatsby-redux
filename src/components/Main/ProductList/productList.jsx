@@ -1,25 +1,23 @@
 import React from 'react'
+import { inject, observer } from 'mobx-react'
 
 import { ProductItem } from '../ProductItem/productItem'
-
 import { ContainerList } from './styled'
 import { Container } from '../../../styles'
 import { ProductData } from '../../../stores/features'
 
-export const ProductList = () => (
+export const ProductList = inject('cartStore')(observer(({ cartStore }) => (
   <Container>
     <ContainerList>
-      {ProductData.map(({
-        id, title, description, img, price,
-      }) => (
+      {ProductData.map(item => (
         <ProductItem
-          key={id}
-          title={title}
-          description={description}
-          img={img}
-          price={price}
+          key={item.id}
+          {...item}
+          addToCart={() => cartStore.addTodoCart(item)}
+          onMouseEnter={() => cartStore.cartMouseEnter()}
+          onMouseLeave={() => cartStore.cartMouseLeave()}
         />
       ))}
     </ContainerList>
   </Container>
-)
+)))
