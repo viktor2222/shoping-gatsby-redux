@@ -1,7 +1,4 @@
-/* eslint-disable class-methods-use-this */
-import {
-  observable, action,
-} from 'mobx'
+import { observable, action } from 'mobx'
 
 class CartStore {
   @observable isShowCart = false
@@ -36,16 +33,6 @@ class CartStore {
       return
     }
     this.productCart.push(payload)
-  }
-
-  @action('Event on mouse enter')
-  cartMouseEnter() {
-    console.log('mouse enter')
-  }
-
-  @action('Event on mouse leave')
-  cartMouseLeave() {
-    console.log('mouse leave')
   }
 
   @action('Remove todo Cart')
