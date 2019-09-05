@@ -1,20 +1,17 @@
+/* eslint-disable class-methods-use-this */
 import { observable, action } from 'mobx'
 
 class ProductStore {
-  @observable isShowCart = false
-
-  @observable isShowCheck = false
-
   @observable productCart = []
 
   @action('Event on mouse enter')
   cartMouseEnter(id) {
-    console.log('enter')
+    console.log('enter:', id)
   }
 
   @action('Event on mouse leave')
   cartMouseLeave(id) {
-    console.log('leave')
+    console.log('leave:', id)
   }
 }
 

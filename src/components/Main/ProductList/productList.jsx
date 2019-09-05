@@ -6,18 +6,20 @@ import { ContainerList } from './styled'
 import { Container } from '../../../styles'
 import { ProductData } from '../../../stores/features'
 
-export const ProductList = inject('cartStore')(observer(({ cartStore }) => (
-  <Container>
-    <ContainerList>
-      {ProductData.map(item => (
-        <ProductItem
-          key={item.id}
-          {...item}
-          addToCart={() => cartStore.addTodoCart(item)}
-          onMouseEnter={() => cartStore.cartMouseEnter()}
-          onMouseLeave={() => cartStore.cartMouseLeave()}
-        />
-      ))}
-    </ContainerList>
-  </Container>
-)))
+export const ProductList = inject('cartStore', 'productStore')(
+  observer(({ cartStore, productStore }) => (
+    <Container>
+      <ContainerList>
+        {ProductData.map(item => (
+          <ProductItem
+            key={item.id}
+            {...item}
+            addToCart={() => cartStore.addTodoCart(item)}
+            onMouseEnter={() => productStore.cartMouseEnter(item.id)}
+            onMouseLeave={() => productStore.cartMouseLeave(item.id)}
+          />
+        ))}
+      </ContainerList>
+    </Container>
+  )),
+)
