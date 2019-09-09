@@ -20,11 +20,13 @@ class CartStore {
   @action('Check is show')
   showCheck() {
     this.isShowCheck = true
+    window.localStorage.setItem('productCart', JSON.stringify(this.productCart))
   }
 
   @action('Check is hide')
   hideCheck() {
     this.isShowCheck = false
+    this.productCart = []
   }
 
   @action('Add todo Cart')

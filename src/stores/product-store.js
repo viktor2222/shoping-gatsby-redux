@@ -1,4 +1,3 @@
-/* eslint-disable class-methods-use-this */
 import { observable, action } from 'mobx'
 
 class ProductStore {
