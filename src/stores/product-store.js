@@ -1,6 +1,8 @@
 import { observable, action } from 'mobx'
 
 class ProductStore {
+  // no functionality
+
   @observable productCart = []
 
   @action('Event on mouse enter')
@@ -12,6 +14,7 @@ class ProductStore {
   cartMouseLeave(id) {
     console.log('leave:', id)
   }
+  // end
 }
 
 export default ProductStore

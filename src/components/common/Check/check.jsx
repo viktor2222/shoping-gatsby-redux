@@ -32,7 +32,7 @@ export const Check = inject('cartStore')(
             <span>{price}</span>
           </ItemList>
         ))}
-        <BuyBtn type='button' onClick={() => cartStore.hideCheck()}>
+        <BuyBtn type='button' onClick={cartStore.hideCheck}>
           Ok!
         </BuyBtn>
       </Fade>

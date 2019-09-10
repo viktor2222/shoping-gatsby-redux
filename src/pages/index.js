@@ -9,11 +9,10 @@ import { ProductList } from '../components/Main'
 import CartStore from '../stores/cart-store'
 import ProductStore from '../stores/product-store'
 
-const storeCart = { cartStore: new CartStore() }
-const storeProduct = { productStore: new ProductStore() }
+const stores = { cartStore: new CartStore(), productStore: new ProductStore() }
 
 const IndexPage = () => (
-  <Provider {...storeCart} {...storeProduct}>
+  <Provider {...stores}>
     <Layout>
       <SEO title='Home' />
       <ProductList />

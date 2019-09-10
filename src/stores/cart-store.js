@@ -24,17 +24,25 @@ class CartStore {
   }
 
   @action('Check is hide')
-  hideCheck() {
+  hideCheck = () => {
     this.isShowCheck = false
     this.productCart = []
   }
 
   @action('Add todo Cart')
   addTodoCart(payload) {
+    // console.log('tut:', payload.price)
     if (this.productCart.find(x => x.id === payload.id)) {
       return
     }
     this.productCart.push(payload)
+
+    // const productPrice = payload.price;
+    // if(productPrice !== ''){
+    //   find(x => x.price += productPrice){
+    //     console.log(price);
+    //   }
+    // }
   }
 
   @action('Remove todo Cart')

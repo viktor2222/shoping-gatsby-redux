@@ -12,21 +12,19 @@ export const ProductItem = ({
   description,
   price,
 }) => (
-  <>
-    <CartContainer
-      key={id}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
-      <ProductImg src={img} alt={title} />
-      <ShowContent>
-        <h4>{title}</h4>
-        <p>{description}</p>
-        <p>{price}</p>
-        <BuyBtn type='button' cart onClick={addToCart}>
-          Add To Cart
-        </BuyBtn>
-      </ShowContent>
-    </CartContainer>
-  </>
+  <CartContainer
+    key={id}
+    onMouseEnter={onMouseEnter}
+    onMouseLeave={onMouseLeave}
+  >
+    <ProductImg src={img} alt={title} />
+    <ShowContent>
+      <h4>{title}</h4>
+      <p>{description}</p>
+      <p>{price}</p>
+      <BuyBtn type='button' cart onClick={addToCart}>
+        Add To Cart
+      </BuyBtn>
+    </ShowContent>
+  </CartContainer>
 )
