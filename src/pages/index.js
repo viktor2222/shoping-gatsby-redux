@@ -6,9 +6,9 @@ import { Layout } from '../components/common/Layout/layout'
 import { SEO } from '../components/common/Seo/seo'
 import { ProductList } from '../components/Main'
 
-import CartStore from '../stores/cart-store'
+import { ProductStore, CartStore } from '../stores'
 
-const stores = { cartStore: new CartStore() }
+const stores = { cartStore: new CartStore(), productStore: new ProductStore() }
 
 const IndexPage = () => (
   <Provider {...stores}>

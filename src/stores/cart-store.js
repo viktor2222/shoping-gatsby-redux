@@ -1,7 +1,4 @@
-/* eslint-disable class-methods-use-this */
-import {
-  observable, action,
-} from 'mobx'
+import { observable, action } from 'mobx'
 
 class CartStore {
   @observable isShowCart = false
@@ -11,45 +8,37 @@ class CartStore {
   @observable productCart = []
 
   @action('Cart is show')
-  showCart() {
+  showCart = () => {
     this.isShowCart = true
   }
 
   @action('Cart is hide')
-  hideCart() {
+  hideCart = () => {
     this.isShowCart = false
   }
 
   @action('Check is show')
-  showCheck() {
+  showCheck = () => {
     this.isShowCheck = true
+    window.localStorage.setItem('productCart', JSON.stringify(this.productCart))
   }
 
   @action('Check is hide')
-  hideCheck() {
+  hideCheck = () => {
     this.isShowCheck = false
+    this.productCart = []
   }
 
   @action('Add todo Cart')
-  addTodoCart(payload) {
+  addTodoCart = (payload) => {
     if (this.productCart.find(x => x.id === payload.id)) {
       return
     }
     this.productCart.push(payload)
   }
 
-  @action('Event on mouse enter')
-  cartMouseEnter() {
-    console.log('mouse enter')
-  }
-
-  @action('Event on mouse leave')
-  cartMouseLeave() {
-    console.log('mouse leave')
-  }
-
   @action('Remove todo Cart')
-  removeTodoCart(id) {
+  removeTodoCart = (id) => {
     this.productCart = this.productCart.filter(item => item.id !== id)
   }
 }

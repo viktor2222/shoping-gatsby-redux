@@ -2,9 +2,7 @@ import React from 'react'
 import { Fade } from 'react-reveal'
 import { inject, observer } from 'mobx-react'
 import { CustomModal } from '..'
-import {
-  ItemList, CartImg, TitleCheck,
-} from './styled'
+import { ItemList, CartImg, TitleCheck } from './styled'
 
 import { BuyBtn } from '../../../styles'
 
@@ -22,19 +20,22 @@ const checkCustom = {
   },
 }
 
-export const Check = inject('cartStore')(observer(({ cartStore }) => (
-  <CustomModal
-    isOpen={cartStore.isShowCheck}
-    cartModal={checkCustom}
-  >
-    <Fade top cascade>
-      <TitleCheck>Your check</TitleCheck>
-      <ItemList>
-        <CartImg src='/cart/activiafin.png' alt='product item' />
-        <span>activia</span>
-        <span>$25</span>
-      </ItemList>
-      <BuyBtn type='button' onClick={() => cartStore.hideCheck()}>Ok!</BuyBtn>
-    </Fade>
-  </CustomModal>
-)))
+export const Check = inject('cartStore')(
+  observer(({ cartStore }) => (
+    <CustomModal isOpen={cartStore.isShowCheck} cartModal={checkCustom}>
+      <Fade top cascade>
+        <TitleCheck>Your check</TitleCheck>
+        {cartStore.productCart.map(({ img, title, price }, index) => (
+          <ItemList key={index}>
+            <CartImg src={img} alt={title} />
+            <span>{title}</span>
+            <span>{price}</span>
+          </ItemList>
+        ))}
+        <BuyBtn type='button' onClick={cartStore.hideCheck}>
+          Ok!
+        </BuyBtn>
+      </Fade>
+    </CustomModal>
+  )),
+)
