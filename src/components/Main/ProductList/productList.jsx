@@ -6,7 +6,10 @@ import { ContainerList } from './styled'
 import { Container } from '../../../styles'
 import { ProductData } from '../../../stores/features'
 
-export const ProductList = inject('cartStore', 'productStore')(
+export const ProductList = inject(stores => ({
+  cartStore: stores.cartStore,
+  productStore: stores.productStore,
+}))(
   observer(({ cartStore, productStore }) => (
     <Container>
       <ContainerList>

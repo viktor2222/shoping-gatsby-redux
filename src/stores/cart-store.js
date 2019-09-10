@@ -8,17 +8,17 @@ class CartStore {
   @observable productCart = []
 
   @action('Cart is show')
-  showCart() {
+  showCart = () => {
     this.isShowCart = true
   }
 
   @action('Cart is hide')
-  hideCart() {
+  hideCart = () => {
     this.isShowCart = false
   }
 
   @action('Check is show')
-  showCheck() {
+  showCheck = () => {
     this.isShowCheck = true
     window.localStorage.setItem('productCart', JSON.stringify(this.productCart))
   }
@@ -30,23 +30,15 @@ class CartStore {
   }
 
   @action('Add todo Cart')
-  addTodoCart(payload) {
-    // console.log('tut:', payload.price)
+  addTodoCart = (payload) => {
     if (this.productCart.find(x => x.id === payload.id)) {
       return
     }
     this.productCart.push(payload)
-
-    // const productPrice = payload.price;
-    // if(productPrice !== ''){
-    //   find(x => x.price += productPrice){
-    //     console.log(price);
-    //   }
-    // }
   }
 
   @action('Remove todo Cart')
-  removeTodoCart(id) {
+  removeTodoCart = (id) => {
     this.productCart = this.productCart.filter(item => item.id !== id)
   }
 }

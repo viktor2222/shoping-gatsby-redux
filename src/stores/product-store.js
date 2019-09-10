@@ -6,12 +6,12 @@ class ProductStore {
   @observable productCart = []
 
   @action('Event on mouse enter')
-  cartMouseEnter(id) {
+  cartMouseEnter = (id) => {
     console.log('enter:', id)
   }
 
   @action('Event on mouse leave')
-  cartMouseLeave(id) {
+  cartMouseLeave = (id) => {
     console.log('leave:', id)
   }
   // end
