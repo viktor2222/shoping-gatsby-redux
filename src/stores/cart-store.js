@@ -20,7 +20,15 @@ class CartStore {
   @action('Check is show')
   showCheck = () => {
     this.isShowCheck = true
-    window.localStorage.setItem('productCart', JSON.stringify(this.productCart))
+
+    try {
+      window.localStorage.setItem(
+        'productCart',
+        JSON.stringify(this.productCart),
+      )
+    } catch {
+      console.error('setItem store error')
+    }
   }
 
   @action('Check is hide')
