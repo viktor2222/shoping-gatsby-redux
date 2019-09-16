@@ -21,7 +21,10 @@ export const ProductItem = ({
     <ShowContent>
       <h4>{title}</h4>
       <p>{description}</p>
-      <p>{price}</p>
+      <p>
+        $
+        {price}
+      </p>
       <BuyBtn type='button' cart onClick={addToCart}>
         Add To Cart
       </BuyBtn>

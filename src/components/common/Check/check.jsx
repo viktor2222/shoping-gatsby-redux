@@ -29,7 +29,10 @@ export const Check = inject('cartStore')(
           <ItemList key={index}>
             <CartImg src={img} alt={title} />
             <span>{title}</span>
-            <span>{price}</span>
+            <span>
+              $
+              {price}
+            </span>
           </ItemList>
         ))}
         <BuyBtn type='button' onClick={cartStore.hideCheck}>

@@ -10,7 +10,10 @@ export const CartProductItem = ({
   <ItemList key={id}>
     <CartImg src={img} alt={title} />
     <span>{title}</span>
-    <span>{price}</span>
+    <span>
+      $
+      {price}
+    </span>
     <CloseBtn onClick={removeWithCart}>x</CloseBtn>
   </ItemList>
 )
