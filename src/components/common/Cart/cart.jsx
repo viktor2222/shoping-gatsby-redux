@@ -1,5 +1,4 @@
-/* eslint-disable no-sequences */
-import React from 'react'
+import React, { useCallback } from 'react'
 import { inject, observer } from 'mobx-react'
 import { Fade } from 'react-reveal'
 import { CustomModal } from '..'
@@ -22,29 +21,41 @@ const customStyles = {
   },
 }
 
-export const Cart = inject('cartStore')(
-  observer(({ cartStore }) => (
+const CartComponent = ({ cartStore }) => {
+  const buyBtnAction = useCallback(() => {
+    cartStore.showCheck();
+    cartStore.hideCart()
+  }, [])
+  const hideCart = useCallback(() => {
+    cartStore.hideCart()
+  }, [])
+  const removeTodoCart = useCallback((id) => {
+    cartStore.removeTodoCart(id)
+  }, [])
+  return (
     <CustomModal isOpen={cartStore.isShowCart} cartModal={customStyles}>
       <Fade right cascade>
-        <CloseButton onClick={() => cartStore.hideCart()} />
+        <CloseButton onClick={hideCart} />
         {cartStore.productCart.map(i => (
           <CartProductItem
             key={i.id}
             {...i}
-            removeWithCart={() => cartStore.removeTodoCart(i.id)}
+            removeWithCart={removeTodoCart}
           />
         ))}
         <SumCount>
-            Total: $
+              Total: $
           {cartStore.totalSum}
         </SumCount>
         <BuyBtn
-          onClick={() => (cartStore.showCheck(), cartStore.hideCart())}
+          onClick={buyBtnAction}
           type='button'
         >
-            Buy
+              Buy
         </BuyBtn>
       </Fade>
     </CustomModal>
-  )),
-)
+  )
+}
+
+export const Cart = inject('cartStore')(observer(CartComponent))

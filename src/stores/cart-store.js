@@ -33,15 +33,8 @@ class CartStore {
   }
 
   @computed get totalSum() {
-    const dataProduct = this.productCart
-    if (this.isShowCart === true && dataProduct !== []) {
-      for (let i = 0; i <= dataProduct.length; i += 1) {
-        let newPrice = dataProduct
-          .map(x => x.price)
-          .reduce((sum, current) => sum + current, 0)
-        return newPrice
-      }
-    }
+    const { productCart } = this
+    return productCart.reduce((sum, current) => sum + current.price, 0)
   }
 
   @computed get cartCount() {

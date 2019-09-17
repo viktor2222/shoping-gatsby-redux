@@ -14,7 +14,7 @@ import {
 import { Check, Cart } from '..'
 
 
-export const Header = inject('cartStore')(observer(({ cartStore }) => (
+const HeaderComponent = ({ cartStore }) => (
   <HeaderContainer>
     <Container>
       <ActiveList onClick={() => cartStore.showCart()}>
@@ -25,4 +25,5 @@ export const Header = inject('cartStore')(observer(({ cartStore }) => (
     <Cart />
     <Check />
   </HeaderContainer>
-)))
+)
+export const Header = inject('cartStore')(observer(HeaderComponent))
