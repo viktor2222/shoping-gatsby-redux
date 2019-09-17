@@ -19,7 +19,7 @@ export const Header = inject('cartStore')(observer(({ cartStore }) => (
     <Container>
       <ActiveList onClick={() => cartStore.showCart()}>
         <ImgCart src='/cart.svg' alt='cart' />
-        <CartCount>2</CartCount>
+        <CartCount>{cartStore.cartCount}</CartCount>
       </ActiveList>
     </Container>
     <Cart />

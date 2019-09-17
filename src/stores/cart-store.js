@@ -44,6 +44,10 @@ class CartStore {
     }
   }
 
+  @computed get cartCount() {
+    return this.productCart.length;
+  }
+
   @action('Check is hide')
   hideCheck = () => {
     this.isShowCheck = false

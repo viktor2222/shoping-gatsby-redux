@@ -24,8 +24,7 @@ export const ActiveList = styled.div`
 
 export const CartCount = styled.span`
     position: absolute;
-    height: 20px;
-    width: 20px;
+    width: 27px;
     border-radius: 50%;
     background-color: #2bbee2;
     font-size: 12px;
@@ -35,6 +34,7 @@ export const CartCount = styled.span`
     top: -5px;
     right: -20px;
     color: #fff;
+    font-weight: bold;
 `;
 export const Title = styled.h4`
     font: 16px/22px 'Sniglet', sans-serif;
