@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { CartContainer, ProductImg, ShowContent } from './styled'
 import { BuyBtn } from '../../../styles'
 
@@ -11,20 +11,50 @@ export const ProductItem = ({
   id,
   description,
   price,
-}) => (
-  <CartContainer
-    key={id}
-    onMouseEnter={onMouseEnter}
-    onMouseLeave={onMouseLeave}
-  >
-    <ProductImg src={img} alt={title} />
-    <ShowContent>
-      <h4>{title}</h4>
-      <p>{description}</p>
-      <p>{price}</p>
-      <BuyBtn type='button' cart onClick={addToCart}>
+}) => {
+  const item = {
+    title,
+    img,
+    id,
+    description,
+    price,
+  }
+  const addItem = useCallback(
+    () => {
+      addToCart(item)
+    },
+    [],
+  )
+  const mouseEnter = useCallback(
+    () => {
+      onMouseEnter(id)
+    },
+    [],
+  )
+  const mouseLeave = useCallback(
+    () => {
+      onMouseLeave(id)
+    },
+    [],
+  )
+  return (
+    <CartContainer
+      key={id}
+      onMouseEnter={mouseEnter}
+      onMouseLeave={mouseLeave}
+    >
+      <ProductImg src={img} alt={title} />
+      <ShowContent>
+        <h4>{title}</h4>
+        <p>{description}</p>
+        <p>
+        $
+          {price}
+        </p>
+        <BuyBtn type='button' cart onClick={addItem}>
         Add To Cart
-      </BuyBtn>
-    </ShowContent>
-  </CartContainer>
-)
+        </BuyBtn>
+      </ShowContent>
+    </CartContainer>
+  )
+}

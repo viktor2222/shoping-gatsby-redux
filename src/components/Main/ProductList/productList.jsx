@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { inject, observer } from 'mobx-react'
 
 import { ProductItem } from '../ProductItem/productItem'
@@ -6,23 +6,45 @@ import { ContainerList } from './styled'
 import { Container } from '../../../styles'
 import { ProductData } from '../../../stores/features'
 
-export const ProductList = inject(stores => ({
-  cartStore: stores.cartStore,
-  productStore: stores.productStore,
-}))(
-  observer(({ cartStore, productStore }) => (
+const ProductListComponent = ({ cartStore, productStore }) => {
+  const addTodoCart = useCallback(
+    (item) => {
+      cartStore.addTodoCart(item)
+    },
+    [],
+  )
+  const cartMouseEnter = useCallback(
+    (id) => {
+      productStore.cartMouseEnter(id)
+    },
+    [],
+  )
+  const cartMouseLeave = useCallback(
+    (id) => {
+      productStore.cartMouseLeave(id)
+    },
+    [],
+  )
+  return (
     <Container>
       <ContainerList>
         {ProductData.map(item => (
           <ProductItem
             key={item.id}
             {...item}
-            addToCart={() => cartStore.addTodoCart(item)}
-            onMouseEnter={() => productStore.cartMouseEnter(item.id)}
-            onMouseLeave={() => productStore.cartMouseLeave(item.id)}
+            addToCart={addTodoCart}
+            onMouseEnter={cartMouseEnter}
+            onMouseLeave={cartMouseLeave}
           />
         ))}
       </ContainerList>
     </Container>
-  )),
+  )
+}
+
+export const ProductList = inject(stores => ({
+  cartStore: stores.cartStore,
+  productStore: stores.productStore,
+}))(
+  observer(ProductListComponent),
 )

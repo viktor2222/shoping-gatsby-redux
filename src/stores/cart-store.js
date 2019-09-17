@@ -1,4 +1,5 @@
-import { observable, action } from 'mobx'
+/* eslint-disable prefer-const */
+import { observable, action, computed } from 'mobx'
 
 class CartStore {
   @observable isShowCart = false
@@ -20,7 +21,23 @@ class CartStore {
   @action('Check is show')
   showCheck = () => {
     this.isShowCheck = true
-    window.localStorage.setItem('productCart', JSON.stringify(this.productCart))
+
+    try {
+      window.localStorage.setItem(
+        'productCart',
+        JSON.stringify(this.productCart),
+      )
+    } catch {
+      console.error('setItem store error')
+    }
+  }
+
+  @computed get totalSum() {
+    return this.productCart.reduce((sum, current) => sum + current.price, 0)
+  }
+
+  @computed get cartCount() {
+    return this.productCart.length;
   }
 
   @action('Check is hide')

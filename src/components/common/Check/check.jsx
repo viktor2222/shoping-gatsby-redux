@@ -20,22 +20,26 @@ const checkCustom = {
   },
 }
 
-export const Check = inject('cartStore')(
-  observer(({ cartStore }) => (
-    <CustomModal isOpen={cartStore.isShowCheck} cartModal={checkCustom}>
-      <Fade top cascade>
-        <TitleCheck>Your check</TitleCheck>
-        {cartStore.productCart.map(({ img, title, price }, index) => (
-          <ItemList key={index}>
-            <CartImg src={img} alt={title} />
-            <span>{title}</span>
-            <span>{price}</span>
-          </ItemList>
-        ))}
-        <BuyBtn type='button' onClick={cartStore.hideCheck}>
+const CheckComponent = ({ cartStore }) => (
+  <CustomModal isOpen={cartStore.isShowCheck} cartModal={checkCustom}>
+    <Fade top cascade>
+      <TitleCheck>Your check</TitleCheck>
+      {cartStore.productCart.map(({
+        img, title, price, id,
+      }) => (
+        <ItemList key={id}>
+          <CartImg src={img} alt={title} />
+          <span>{title}</span>
+          <span>
+              $
+            {price}
+          </span>
+        </ItemList>
+      ))}
+      <BuyBtn type='button' onClick={cartStore.hideCheck}>
           Ok!
-        </BuyBtn>
-      </Fade>
-    </CustomModal>
-  )),
+      </BuyBtn>
+    </Fade>
+  </CustomModal>
 )
+export const Check = inject('cartStore')(observer(CheckComponent))

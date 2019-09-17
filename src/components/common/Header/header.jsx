@@ -14,15 +14,16 @@ import {
 import { Check, Cart } from '..'
 
 
-export const Header = inject('cartStore')(observer(({ cartStore }) => (
+const HeaderComponent = ({ cartStore }) => (
   <HeaderContainer>
     <Container>
-      <ActiveList onClick={() => cartStore.showCart()}>
+      <ActiveList onClick={cartStore.showCart}>
         <ImgCart src='/cart.svg' alt='cart' />
-        <CartCount>2</CartCount>
+        <CartCount>{cartStore.cartCount}</CartCount>
       </ActiveList>
     </Container>
     <Cart />
     <Check />
   </HeaderContainer>
-)))
+)
+export const Header = inject('cartStore')(observer(HeaderComponent))

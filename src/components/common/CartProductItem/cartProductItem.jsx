@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 
 import {
   CartImg, ItemList, CloseBtn,
@@ -6,11 +6,22 @@ import {
 
 export const CartProductItem = ({
   img, title, price, id, removeWithCart,
-}) => (
-  <ItemList key={id}>
-    <CartImg src={img} alt={title} />
-    <span>{title}</span>
-    <span>{price}</span>
-    <CloseBtn onClick={removeWithCart}>x</CloseBtn>
-  </ItemList>
-)
+}) => {
+  const onRemove = useCallback(
+    () => {
+      removeWithCart(id)
+    },
+    [id],
+  )
+  return (
+    <ItemList key={id}>
+      <CartImg src={img} alt={title} />
+      <span>{title}</span>
+      <span>
+      $
+        {price}
+      </span>
+      <CloseBtn onClick={onRemove}>x</CloseBtn>
+    </ItemList>
+  )
+}
