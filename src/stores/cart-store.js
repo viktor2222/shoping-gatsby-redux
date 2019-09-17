@@ -1,5 +1,5 @@
 /* eslint-disable prefer-const */
-import { observable, action } from 'mobx'
+import { observable, action, computed } from 'mobx'
 
 class CartStore {
   @observable isShowCart = false
@@ -32,8 +32,7 @@ class CartStore {
     }
   }
 
-  @action('Total Sum')
-  totalSum = () => {
+  @computed get totalSum() {
     const dataProduct = this.productCart
     if (this.isShowCart === true && dataProduct !== []) {
       for (let i = 0; i <= dataProduct.length; i += 1) {

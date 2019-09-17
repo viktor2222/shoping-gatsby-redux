@@ -35,14 +35,14 @@ export const Cart = inject('cartStore')(
           />
         ))}
         <SumCount>
-          Total: $
-          {cartStore.totalSum()}
+            Total: $
+          {cartStore.totalSum}
         </SumCount>
         <BuyBtn
           onClick={() => (cartStore.showCheck(), cartStore.hideCart())}
           type='button'
         >
-          Buy
+            Buy
         </BuyBtn>
       </Fade>
     </CustomModal>
