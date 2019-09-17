@@ -33,8 +33,7 @@ class CartStore {
   }
 
   @computed get totalSum() {
-    const { productCart } = this
-    return productCart.reduce((sum, current) => sum + current.price, 0)
+    return this.productCart.reduce((sum, current) => sum + current.price, 0)
   }
 
   @computed get cartCount() {
