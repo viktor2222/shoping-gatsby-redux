@@ -17,7 +17,7 @@ import { Check, Cart } from '..'
 const HeaderComponent = ({ cartStore }) => (
   <HeaderContainer>
     <Container>
-      <ActiveList onClick={() => cartStore.showCart()}>
+      <ActiveList onClick={cartStore.showCart}>
         <ImgCart src='/cart.svg' alt='cart' />
         <CartCount>{cartStore.cartCount}</CartCount>
       </ActiveList>

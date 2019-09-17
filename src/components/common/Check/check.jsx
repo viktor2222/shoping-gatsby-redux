@@ -24,8 +24,10 @@ const CheckComponent = ({ cartStore }) => (
   <CustomModal isOpen={cartStore.isShowCheck} cartModal={checkCustom}>
     <Fade top cascade>
       <TitleCheck>Your check</TitleCheck>
-      {cartStore.productCart.map(({ img, title, price }, index) => (
-        <ItemList key={index}>
+      {cartStore.productCart.map(({
+        img, title, price, id,
+      }) => (
+        <ItemList key={id}>
           <CartImg src={img} alt={title} />
           <span>{title}</span>
           <span>
