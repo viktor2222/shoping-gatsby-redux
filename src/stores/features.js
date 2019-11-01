@@ -4,6 +4,7 @@ export const ProductData = [
     title: 'activia',
     description: 'activia',
     img: '/cart/activiafin.png',
+    type: 'one',
     price: 12,
   },
   {
@@ -11,6 +12,7 @@ export const ProductData = [
     title: 'blueberry',
     description: 'blueberry',
     img: '/cart/blueberry.png',
+    type: 'multiply',
     price: 13,
   },
   {
@@ -18,6 +20,7 @@ export const ProductData = [
     title: 'buttermilk',
     description: 'buttermilk',
     img: '/cart/buttermilk.png',
+    type: 'oneTime',
     price: 8,
   },
   {
@@ -25,6 +28,7 @@ export const ProductData = [
     title: 'L&F',
     description: 'L&F',
     img: '/cart/L&F.png',
+    type: 'oneTime',
     price: 11,
   },
   {
@@ -32,6 +36,7 @@ export const ProductData = [
     title: 'MMMH',
     description: 'MMMH',
     img: '/cart/MMMH.png',
+    type: 'multiply',
     price: 10,
   },
   {
@@ -39,6 +44,7 @@ export const ProductData = [
     title: 'vanilla fruit',
     description: 'vanilla fruit',
     img: '/cart/vanilla_fruit.png',
+    type: 'one',
     price: 5,
   },
 ]

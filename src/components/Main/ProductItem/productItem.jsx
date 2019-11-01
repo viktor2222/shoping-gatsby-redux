@@ -10,6 +10,7 @@ export const ProductItem = ({
   img,
   id,
   description,
+  type,
   price,
 }) => {
   const item = {
@@ -17,6 +18,7 @@ export const ProductItem = ({
     img,
     id,
     description,
+    type,
     price,
   }
   const addItem = useCallback(

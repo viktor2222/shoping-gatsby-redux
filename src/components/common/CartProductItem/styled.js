@@ -20,3 +20,16 @@ export const CloseBtn = styled.span`
       opacity: 1;
   }
 `;
+
+export const CartTitle = styled.h4`
+  width: 70px;
+  
+`;
+export const CountItem = styled.span`
+  background-color: #2bbee2;
+  border-radius: 50%;
+  padding: 2px 5px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 12px;
+`;

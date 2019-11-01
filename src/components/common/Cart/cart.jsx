@@ -32,6 +32,10 @@ const CartComponent = ({ cartStore }) => {
   const removeTodoCart = useCallback((id) => {
     cartStore.removeTodoCart(id)
   }, [])
+  const addOneProduct = useCallback((price) => {
+    cartStore.addOneProduct(price)
+  }, [])
+
   return (
     <CustomModal isOpen={cartStore.isShowCart} cartModal={customStyles}>
       <Fade right cascade>
@@ -41,6 +45,7 @@ const CartComponent = ({ cartStore }) => {
             key={i.id}
             {...i}
             removeWithCart={removeTodoCart}
+            addOneProduct={addOneProduct}
           />
         ))}
         <SumCount>

@@ -58,6 +58,19 @@ class CartStore {
   removeTodoCart = (id) => {
     this.productCart = this.productCart.filter(item => item.id !== id)
   }
+
+  @action('Add one product')
+  addOneProduct = (price) => {
+    const {productCart} = this
+    console.log(price)
+    if (productCart.filter(x => x.price === price)) {
+      const newPrice = price + price
+      // this.productCart.price = newPrice
+      // console.log(this.productCart.price)
+      // console.log(this.productCart.concat((sum, current) => sum + current, price))
+      return productCart.find(x => x.price) = newPrice
+    }
+  }
 }
 
 export default CartStore
